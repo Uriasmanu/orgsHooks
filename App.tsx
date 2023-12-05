@@ -1,10 +1,14 @@
 import React from 'react';
-import {Text} from 'react-native';
+import {ScrollView} from 'react-native';
+import Home from './src/telas/Home';
 
 function App(): JSX.Element {
-  return <Text>ola</Text>
+  return (
+  <ScrollView>
+      <Home/>
+  </ScrollView>
+  );
     
-
 }
 
 export default App;

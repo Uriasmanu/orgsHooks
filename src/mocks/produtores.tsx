@@ -10,6 +10,7 @@ const gerarNumeroAleatorio = (min: number, max: number): number =>{
 
 const produtores = {
     titulo: 'Produtores',
+    
     lista: [
         {
         nome: 'Green',

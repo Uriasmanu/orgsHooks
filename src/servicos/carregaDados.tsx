@@ -7,4 +7,6 @@ export const carregaProdutores = () =>{
 
 export const carregaTopo = () =>{
     return topo;
+    //boasVindas: 'Olá, Manoela',
+    //legenda: 'Encontre os melhores produtos'
 }

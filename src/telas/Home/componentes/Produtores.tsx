@@ -3,11 +3,12 @@ import React from "react";
 import { FlatList, Text, StyleSheet } from "react-native";
 import Topo from '../componentes/Topo';
 import { carregaProdutores } from "../../../servicos/carregaDados";
+import Produtor from "./Produtor";
 
 interface Produtor {
   nome: string;
   imagem: any;
-  distancia: string;
+  distancia: number; 
   estrelas: number;
 }
 
@@ -40,8 +41,8 @@ class Produtores extends React.Component<ProdutoresProps> {
     return (
       <FlatList
         data={this.state.lista}
-        renderItem={({ item }) => <Text>{item.nome}</Text>}
-        keyExtractor={({ nome }) => nome}
+        renderItem={({ item }) => <Produtor {...item}/>}
+        keyExtractor={(item) => item.nome}
         ListHeaderComponent={this.topoLista}
       />
     );
@@ -57,6 +58,7 @@ const estilos = StyleSheet.create({
     fontWeight: 'bold',
     color: '#464646',
   },
+  
 });
 
 export default Produtores;

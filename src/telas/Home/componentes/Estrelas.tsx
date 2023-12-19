@@ -13,8 +13,8 @@ import estrelaCinza from '../../../assets/estrelaCinza.png';
 function Estrelas({ quantidade: quantidadeAntiga, editavel = true, grande = true }: EstrelasProps): JSX.Element {
   const estilosFunction = StyleSheet.create({
     estrela: {
-      width: grande ? 36 : 12,
-      height: grande ? 36 : 12,
+      width: grande ? 30 : 12,
+      height: grande ? 30 : 12,
     },
 
     Estrelas: {

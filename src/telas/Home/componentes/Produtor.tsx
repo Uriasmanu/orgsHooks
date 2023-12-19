@@ -1,7 +1,8 @@
 import React from "react";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View,  } from "react-native";
 import produtores from "../../../mocks/produtores"; // Altere o caminho conforme necessário
 import Estrelas from "./Estrelas";
+import { useState } from "react";
 
 interface ProdutorProps {
   nome: string;
@@ -17,20 +18,28 @@ function Produtor({ nome }: ProdutorProps) {
   }
 
   const { imagem, distancia, estrelas } = produtorEncontrado;
+  const [selecionado, setSelecionado] = useState(false);
 
   return (
-    <View style={estilos.container}>
+    <TouchableOpacity 
+    style={estilos.container}
+    onPress={() => setSelecionado(!selecionado)}
+    
+    >
       <Image source={imagem} accessibilityLabel={nome} style={estilos.imagem} />
 
       <View style={estilos.informacoes}>
         <View>
           <Text style={estilos.nome}>{nome}</Text>
-          <Estrelas quantidade={estrelas} editavel={true} grande={true} />
+          <Estrelas 
+          quantidade={estrelas} 
+          editavel={selecionado} 
+          grande={selecionado} />
         </View>
         
         <Text style={estilos.distancia}>{distancia}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 }
 
